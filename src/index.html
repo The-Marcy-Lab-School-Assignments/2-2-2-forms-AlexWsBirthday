@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- style -->
+    <style>
+        select,
+        fieldset {
+            display: block;
+            margin: 1rem 0;
+        }
+
+        button {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        form {
+            width: 19rem;
+            padding: 1rem;
+            border: 0.1rem solid black;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Practice</title>
+</head>
+
+<body>
+
+    <main>
+        <!-- Heading -->
+        <h1>Forms Practice</h1>
+
+        <!-- Aria label was required to be in the form element -->
+        <form id="new-user-form" aria-labelledby='form-heading'>
+
+            <h2 id="form-heading">Create A New User</h2>
+
+            <!-- Username input -->
+            <label for="username">Username:</label>
+            <input id="username" type="text" name='username' placeholder="Add your username" />
+
+
+            <!-- radio group -->
+            <!-- Names help us group radio elements and in general, like elements, together -->
+            <fieldset name="codingLevel" id="coding-level">
+                <legend>Coding Level</legend>
+
+                <label for="beginner">Beginner</label>
+                <input type="radio" id="beginner" value="beginner" name="codingLevel" checked />
+
+
+                <label for="proficient">Proficient</label>
+                <input type="radio" id="proficient" value="proficient" name="codingLevel" />
+
+
+            </fieldset>
+
+            <!-- Select input -->
+            <label for="location">Location:</label>
+
+            <select name="location" id="location">
+
+                <option value="brooklyn" id="brooklyn">Brooklyn</option>
+                <option value="other borough" id="other-borough">Other Borough</option>
+                <option value="out of state" id="out-of-state">Out Of State</option>
+
+
+            </select>
+
+            <!-- Checkbox -->
+            <label for="did-like-assignment">Did you enjoy this assignment?</label>
+            <input type="checkbox" id="did-like-assignment" name="didLikeAssignment">
+
+
+            <!-- submit button -->
+            <button>Submit</button>
+
+
+        </form>
+
+        <!-- Results -->
+        <section id="results" aria-labelledby="results-heading">
+            <h2 id="results-heading">Results</h2>
+            <p>Username: <span id="results-username"></span></p>
+            <p>Coding level: <span id="results-coding-level"></span></p>
+            <p>Location: <span id="results-location"></span></p>
+            <p>Did you like this assignment? <span id="results-did-like-assignment"></span></p>
+        </section>
+
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
